@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RentalWeb</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RentC</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Menu</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-area="" asp-controller="Reservations" asp-action="Create">Register New Car Rental</a>
+                            <a class="dropdown-item" asp-area="" asp-controller="Customers" asp-action="Create">Register New Customer</a>
+                            <a class="dropdown-item" asp-area="" asp-controller="Cars" asp-action="Create">Register New Car</a>
+                            <a class="dropdown-item" asp-area="" asp-controller="Reservations" asp-action="Index">List Rentals</a>
+                            <a class="dropdown-item" asp-area="" asp-controller="Customers" asp-action="Index">List Customers</a>
+                            <a class="dropdown-item" asp-area="" asp-controller="Cars" asp-action="Index">List Cars</a>
+                            @*<a class="dropdown-item" asp-area="" asp-controller="Cars" asp-action="AvailableCars">Available Cars</a>*@
+                        </div>
+                    </li>
+                </ul>
+                <partial name="_LoginPartial" />
+                @*<ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="#" class="dropdown-item">Reports</a>
+                                <a href="#" class="dropdown-item">Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>*@
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
