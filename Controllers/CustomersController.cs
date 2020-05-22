@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,18 +13,18 @@ namespace RentCWeb.Controllers
     public class CustomersController : Controller
     {
         private readonly MyDbContext _context;
-
         public CustomersController(MyDbContext context)
         {
             _context = context;
         }
 
         // GET: Customers
+        [Authorize(Roles = "manager,admin,salesperson")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Customers.ToListAsync());
         }
-
+        [Authorize(Roles = "manager,admin,salesperson")]
         // GET: Customers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -41,7 +42,7 @@ namespace RentCWeb.Controllers
 
             return View(customer);
         }
-
+        [Authorize(Roles = "manager,admin,salesperson")]
         // GET: Customers/Create
         public IActionResult Create()
         {
@@ -51,6 +52,7 @@ namespace RentCWeb.Controllers
         // POST: Customers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "manager,admin,salesperson")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CustomerID,Name,BirthDate,Location")] Customer customer)
@@ -63,7 +65,7 @@ namespace RentCWeb.Controllers
             }
             return View(customer);
         }
-
+        [Authorize(Roles = "manager,admin,salesperson")]
         // GET: Customers/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -83,6 +85,7 @@ namespace RentCWeb.Controllers
         // POST: Customers/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "manager,admin,salesperson")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("CustomerID,Name,BirthDate,Location")] Customer customer)
@@ -116,6 +119,7 @@ namespace RentCWeb.Controllers
         }
 
         // GET: Customers/Delete/5
+        [Authorize(Roles = "manager,admin,salesperson")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,6 +138,7 @@ namespace RentCWeb.Controllers
         }
 
         // POST: Customers/Delete/5
+        [Authorize(Roles = "manager,admin,salesperson")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

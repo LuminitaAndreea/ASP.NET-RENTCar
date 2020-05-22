@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -19,12 +20,14 @@ namespace RentCWeb.Controllers
         }
 
         // GET: Cars
+        [Authorize(Roles = "manager,admin,salesperson")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Cars.ToListAsync());
         }
 
         // GET: Cars/Details/5
+        [Authorize(Roles = "manager,admin,salesperson")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -41,7 +44,7 @@ namespace RentCWeb.Controllers
 
             return View(car);
         }
-
+        [Authorize(Roles = "manager,admin")]
         // GET: Cars/Create
         public IActionResult Create()
         {
@@ -51,6 +54,7 @@ namespace RentCWeb.Controllers
         // POST: Cars/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "manager,admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CarID,Plate,Manufacturer,Model,PricePerDay,Location")] Car car)
@@ -65,6 +69,7 @@ namespace RentCWeb.Controllers
         }
 
         // GET: Cars/Edit/5
+        [Authorize(Roles = "manager,admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -83,6 +88,7 @@ namespace RentCWeb.Controllers
         // POST: Cars/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "manager,admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("CarID,Plate,Manufacturer,Model,PricePerDay,Location")] Car car)
@@ -116,6 +122,7 @@ namespace RentCWeb.Controllers
         }
 
         // GET: Cars/Delete/5
+        [Authorize(Roles = "manager,admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,6 +141,7 @@ namespace RentCWeb.Controllers
         }
 
         // POST: Cars/Delete/5
+        [Authorize(Roles = "manager,admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
