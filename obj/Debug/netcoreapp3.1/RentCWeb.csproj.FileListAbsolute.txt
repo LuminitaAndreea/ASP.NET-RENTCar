@@ -186,9 +186,6 @@ D:\RentCWeb\RentCWeb\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Vi
 D:\RentCWeb\RentCWeb\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
 D:\RentCWeb\RentCWeb\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 D:\RentCWeb\RentCWeb\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
-D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\RentCWeb.csproj.CoreCompileInputs.cache
-D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\RentCWeb.MvcApplicationPartsAssemblyInfo.cs
-D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\RentCWeb.MvcApplicationPartsAssemblyInfo.cache
 D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\AccessDenied.cshtml.g.cs
 D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
 D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmailChange.cshtml.g.cs
@@ -230,3 +227,13 @@ D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_Validat
 D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\Razor\Views\Cars\AvailableCarsList.cshtml.g.cs
+D:\RentCWeb\RentCWeb\bin\Debug\netcoreapp3.1\System.Web.Cors.dll
+D:\RentCWeb\RentCWeb\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+D:\RentCWeb\RentCWeb\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+D:\RentCWeb\RentCWeb\bin\Debug\netcoreapp3.1\System.Web.Http.Cors.dll
+D:\RentCWeb\RentCWeb\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\RentCWeb.csproj.CoreCompileInputs.cache
+D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\RentCWeb.MvcApplicationPartsAssemblyInfo.cs
+D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\RentCWeb.MvcApplicationPartsAssemblyInfo.cache
+D:\RentCWeb\RentCWeb\obj\Debug\netcoreapp3.1\Razor\Views\Cars\AvailableCars.cshtml.g.cs

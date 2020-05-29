@@ -1,0 +1,35 @@
+﻿@model SearchEL
+@{
+    ViewData["Title"] = "AvailableCars";
+}
+
+<h1>Available Cars</h1>
+
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AvailableCars">
+            <div class="form-group">
+                <label asp-for="startdate" class="control-label"></label>
+                <input asp-for="startdate" class="form-control" />
+                <span asp-validation-for="startdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="enddate" class="control-label"></label>
+                <input asp-for="enddate" class="form-control" />
+                <span asp-validation-for="enddate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="location" class="control-label"></label>
+                <input asp-for="location" class="form-control" />
+                <span asp-validation-for="location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

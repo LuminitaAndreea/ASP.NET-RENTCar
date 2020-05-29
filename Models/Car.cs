@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Data.SqlClient;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace RentCWeb.Models
@@ -11,5 +13,6 @@ namespace RentCWeb.Models
         public string Model { get; set; }
         public string PricePerDay {get;set;}
         public string Location { get; set; }
+
     }
 }
